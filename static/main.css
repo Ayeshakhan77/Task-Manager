@@ -1,0 +1,184 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.content {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+th {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 1.1em;
+}
+
+td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+tr:hover {
+    background-color: #e9ecef;
+    transform: translateY(-1px);
+    transition: all 0.2s ease;
+}
+
+/* FIXED: Actions column styling */
+td:nth-child(3) {
+    min-width: 150px;
+}
+
+/* Target all links in actions column */
+td:nth-child(3) a {
+    display: inline-block;
+    text-align: center;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: white;
+    margin: 2px;
+}
+
+/* First link (Delete) - use first-of-type instead of first-child */
+td:nth-child(3) a:first-of-type {
+    background: #dc3545;
+}
+
+td:nth-child(3) a:first-of-type:hover {
+    background: #c82333;
+    transform: translateY(-2px);
+}
+
+/* Second link (Update) - use last-of-type instead of nth-child */
+td:nth-child(3) a:last-of-type {
+    background: #28a745;
+}
+
+td:nth-child(3) a:last-of-type:hover {
+    background: #218838;
+    transform: translateY(-2px);
+}
+
+/* Hide the line break completely */
+td:nth-child(3) br {
+    display: none;
+}
+
+form {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+input[type="submit"] {
+    padding: 15px 30px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .content {
+        padding: 20px;
+        margin: 10px;
+    }
+    
+    table {
+        font-size: 14px;
+    }
+    
+    form {
+        flex-direction: column;
+    }
+    
+    th, td {
+        padding: 10px;
+    }
+    
+    /* Stack buttons vertically on mobile */
+    td:nth-child(3) a {
+        display: block;
+        margin: 5px 0;
+        width: 100%;
+    }
+}
+
+/* Empty state */
+.empty-state {
+    text-align: center;
+    padding: 40px;
+    color: #6c757d;
+    font-style: italic;
+}
