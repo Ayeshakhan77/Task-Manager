@@ -1,4 +1,4 @@
-# 📝 Task Manager App
+# Task Manager App
 
 A simple **Task Manager web application** built with **Flask** that performs full **CRUD (Create, Read, Update, Delete)** operations. This project is perfect for beginners to learn Flask basics, SQLAlchemy ORM, and template rendering with Jinja2.
 
